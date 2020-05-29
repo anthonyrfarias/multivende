@@ -1,0 +1,15 @@
+<div class="menu" *ngIf="isLoggedIn">
+    <ul>
+        <li>
+            <a [routerLink]="['/']" routerLinkActive="router-link-active" >
+                Proveedores
+            </a>
+        </li>
+        <li>
+            <a [routerLink]="['/closeSession']" routerLinkActive="router-link-active">
+                Cerrar Sesión
+            </a>
+            
+        </li>
+    </ul>
+</div>

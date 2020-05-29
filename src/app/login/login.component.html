@@ -1,0 +1,50 @@
+<div id="login_form">
+    <div>
+        <div id="login_form_container">
+            <div id="login_form_layer">
+                <form #formLogin="ngForm" class="formLogin">
+                    <div id="login_title">
+                        <h4>MULTIVENDE</h4>
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputEmail1">Email address </label>
+                        <input 
+                        type="email" 
+                        name="email"
+                        class="form-control" 
+                        id="exampleInputEmail1" 
+                        aria-describedby="emailHelp"
+                        [(ngModel)]="loginData.email"
+                        #email="ngModel"
+                        >                    
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputPassword1">Password</label>
+                        <input 
+                        name="password" 
+                        type="password" 
+                        class="form-control" 
+                        id="exampleInputPassword1"
+                        [(ngModel)]="loginData.password"
+                        #password="ngModel"
+                        >
+                    </div>
+                    <button 
+                    (click)="login()"
+                    type="submit" 
+                    class="btn btn-primary btn-block"
+                    [disabled]="loginData.email == ''
+                                || loginData.password == ''
+                                || buttonSendDisabled == true"
+                    >
+                        Ingresar
+                        <div class="spinner-border" role="status" *ngIf="formLoading">
+                            <span class="sr-only">Loading...</span>
+                        </div>
+                    </button>
+                </form>
+            </div>
+            
+        </div>
+    </div>    
+</div>

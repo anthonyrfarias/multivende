@@ -1,0 +1,14 @@
+/* You can add global styles to this file, and also import other style files */
+
+body{
+    background-color: #f8f9fa;    
+    box-sizing: border-box;
+}
+
+.data_container{
+    max-width: 1200px;
+    margin: auto;
+    margin-top: 130px;
+    padding:20px;
+    
+}

@@ -1,0 +1,165 @@
+<div class="data_container">
+    <div>
+        <h2>Nuevo Proveedor</h2>
+        <hr>
+    </div>
+    
+    <div>
+      <form #formEditProvider="ngForm" class="formEditProvider">
+        <div class="form-row">
+          <div class="col-sm">
+            <div class="form-group">
+                <label for="">Nombre</label>
+                <input
+                name="name"
+                type="text"
+                class="form-control" 
+                placeholder="Nombre proveedor"
+                [(ngModel)]="editProviderData.name"
+                #name="ngModel"
+                >
+            </div>
+          </div>
+          <div class="col-sm">
+            <div class="form-group">
+                <label for="">Rut</label>
+                <input 
+                name="taxId"
+                type="text" 
+                class="form-control" 
+                placeholder="Rut"
+                [(ngModel)]="editProviderData.taxId"
+                #taxId="ngModel"
+                >
+            </div>
+          </div>          
+        </div>
+        <div class="form-row">
+          <div class="col-sm">
+            <div class="form-group">
+                <label for="">Giro</label>
+                <input
+                name="activity"
+                type="text"
+                class="form-control"
+                placeholder="Giro"
+                [(ngModel)]="editProviderData.activity"
+                #activity="ngModel"
+                >
+            </div>
+          </div>
+          <div class="col-sm">
+            <div class="form-group">
+                <label for="">Email</label>
+                <input
+                name="email"
+                type="email" 
+                class="form-control" 
+                placeholder="Email"
+                [(ngModel)]="editProviderData.email"
+                #email="ngModel"
+                required
+                email
+                >
+            </div>
+          </div>          
+        </div>
+        <div class="form-row">          
+            <div class="col-sm">
+                <div class="form-group">
+                    <label for="">Número de Telefono</label>
+                    <input
+                    name="phoneNumber" 
+                    type="text" 
+                    class="form-control" 
+                    placeholder="Número de telefono"
+                    [(ngModel)]="editProviderData.phoneNumber"
+                    #phoneNumber="ngModel"
+                    >
+                </div>
+            </div>
+            <div class="col-sm">
+                <div class="form-group">
+                    <label for="">País</label>
+                    <input
+                    name="pais"
+                    type="text" 
+                    class="form-control" 
+                    placeholder="País"
+                    [(ngModel)]="editProviderData.pais"
+                    #pais="ngModel"
+                    >
+                </div>
+            </div>
+        </div>
+        <div class="form-row">
+          
+          <div class="col-sm">
+            <div class="form-group">
+                <label for="">
+                    Dirección
+                </label>
+                <input
+                name="address"
+                type="text"
+                class="form-control"
+                placeholder="Dirección"
+                [(ngModel)]="editProviderData.address"
+                #address="ngModel"
+                >
+            </div>
+          </div>          
+        </div>
+        <div class="form-row">
+          <div class="col-sm">
+            <div class="form-group">
+                <label for="">
+                    Zip Code
+                </label>
+                <input
+                name="zipCode"
+                type="text" 
+                id="" 
+                class="form-control" 
+                placeholder="Zipcode"
+                [(ngModel)]="editProviderData.zipCode"
+                #zipCode="ngModel"
+                >
+            </div>
+          </div>
+               
+        </div>
+        <div class="form-row">
+          <div class="col-sm">
+            <div class="form-group">
+                <label for="">
+                    Descripción
+                </label>
+                <input
+                name="description"
+                type="text" 
+                class="form-control" 
+                placeholder="Descripción"
+                [(ngModel)]="editProviderData.description"
+                #description="ngModel"
+                >
+            </div>
+          </div>
+        </div>
+        <div class="form-row">
+            <div class="col align-right">
+                <button routerLink="/list-providers/" class="btn btn-warning">Cancelar </button>
+                &nbsp;
+                <button class="btn btn-primary" (click)="createProvider()" [disabled]="email.invalid || isLoadingButton">
+                  Guardar 
+                  <div class="spinner-border" role="status" *ngIf="isLoadingButton">
+                    <span class="sr-only">Loading...</span>
+                </div>
+                </button>
+            </div>
+            
+        </div>      
+      </form>
+    </div>
+    
+</div>

@@ -1,0 +1,17 @@
+.menu{
+    position: absolute;
+    top: 25px;
+    left: 0;
+    right:0;
+    text-align: center;
+}
+
+.menu ul{
+    list-style-type: none;
+    padding: 0px
+}
+
+.menu ul li{
+    display: inline;
+    padding: 10px;;
+}

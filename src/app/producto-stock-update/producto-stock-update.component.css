@@ -1,0 +1,12 @@
+.align-right{
+    text-align: right;
+}
+.spinner_form{
+    padding: 50px;
+    text-align: center;
+}
+
+.spinner-border{
+    height: 1rem !important;
+    width: 1rem !important;
+}

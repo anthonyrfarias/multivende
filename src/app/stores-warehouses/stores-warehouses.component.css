@@ -1,0 +1,18 @@
+.spinner_list{
+    padding: 30px;
+    text-align: center;
+}
+
+.botones{
+    padding: 15px 0 15px;
+    text-align: right;
+}
+
+
+.btn_icon{
+    width: 44px !important;
+    border-radius: 180px;
+    height: 44px;
+    padding: 0px;
+    text-align: center;
+}

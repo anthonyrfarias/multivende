@@ -1,0 +1,36 @@
+#login_form{
+    display: flex;
+    width: 100vw;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    background-color: #e7eaeb;
+}
+
+#login_form_container{
+    max-width: 500px;
+    width: 500px;
+    
+    padding: 20px;
+    background-color: #ffffff;
+    display: flex;
+    justify-content: center;
+}
+
+#login_form_layer{
+    height: auto;
+    width: 100%;
+}
+
+#login_form_layer form{
+    width: 100%;
+}
+
+#login_title{
+    text-align: center;
+}
+
+.spinner-border{
+    height: 1rem !important;
+    width: 1rem !important;
+}

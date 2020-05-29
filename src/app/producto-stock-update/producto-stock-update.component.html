@@ -1,0 +1,83 @@
+<div class="data_container">
+    <div>
+        <h2>Carga masiva de stock</h2>
+        <hr>
+    </div>
+    
+    <div>
+      <form #formMasiveUpload="ngForm" class="formMasiveUpload">
+        <div class="alert alert-danger" role="alert" *ngIf="invalidFormat">
+          Formato invalido
+        </div>
+
+        <div class="form-row">
+          <div class="col-sm">
+            <div class="form-group">
+                <label for="">Productos</label>
+                <div>
+                    <small>
+                        Ingrese los productos con el siguiente formato: <b>CODIGO:CANTIDAD</b>  
+                        separados por dos puntos uno debajo del otro.
+                    </small>
+                </div>
+                <br>
+                <textarea
+                name="productos"
+                rows="6"
+                class="form-control" 
+                placeholder="Ejemplo: 665-523180698:100"
+                (keyup)="0"
+                (select)="0"
+                [(ngModel)]="productos"
+                
+                
+                ></textarea>
+            </div>
+        </div>               
+        </div> 
+        <div class="form-row">
+            
+            <div class="col-sm align-right">
+                <button routerLink="/stores-warehouses/{{merchant_id}}" class="btn btn-warning">Cancelar </button>
+                &nbsp;
+                  <button class="btn btn-primary" (click)="cargaMasiva()" [disabled]="isLoadingButton">Cargar
+                    <div class="spinner-border" role="status" *ngIf="isLoadingButton">
+                      <span class="sr-only">Loading...</span>
+                    </div>
+                  </button>
+            </div>               
+        </div>               
+      </form>
+    </div>
+
+
+    <br>
+    <br>
+
+    <div *ngIf="resultados.length > 0">
+      <div>
+        <h4>
+          Resultados de carga
+        </h4>
+      </div>
+      <div>
+        <table class="table table-striped">
+          <thead>
+          <tr>
+              <th scope="col">Código</th>
+              <th scope="col">Exitoso</th>
+              <th scope="col">Resultado</th>              
+          </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let item of resultados">
+              <td> {{item.code}} </td>
+              <td> {{item.success ? "Sí": "No"}} </td>
+              <td> {{!item.success ? item.error : "Success"}} </td>              
+            </tr>
+          </tbody>
+          </table>
+      </div>
+    </div>
+    
+</div>
